@@ -1,0 +1,19 @@
+{
+  "name": "stt-web-app",
+  "version": "1.0.0",
+  "description": "Speech-to-Text Web Application using MERN Stack",
+  "scripts": {
+    "dev": "echo 'Start these in separate terminals:' && echo '1. cd server && node index.js' && echo '2. cd client && npm run dev'",
+    "start-dev": "concurrently \"cd server && node index.js\" \"cd client && npm run dev\"",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "server:dev": "cd server && node index.js",
+    "server:test": "cd server && node -e \"console.log('Testing MongoDB connection...'); const mongoose = require('mongoose'); const uri = require('dotenv').config().parsed.MONGODB_URI; mongoose.connect(uri).then(() => { console.log('✅ MongoDB connected'); process.exit(0); }).catch(err => { console.error('❌ Connection failed:', err.message); process.exit(1); });\"",
+    "setup": "bash setup.sh",
+    "clean": "rm -rf node_modules client/node_modules server/node_modules && npm install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
