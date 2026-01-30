@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import TranscribeApp from './pages/TranscribeApp';
 import './App.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
 function App() {
   const [user, setUser] = useState(null);
