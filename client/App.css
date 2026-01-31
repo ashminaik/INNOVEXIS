@@ -1,0 +1,120 @@
+/* DarkVeil Full Page Background */
+.darkveil-fullpage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 3.2em;
+  margin: 0;
+  line-height: 1;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 5px;
+}
+
+.app-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+  display: block !important;
+}
+
+.subtitle-wrapper {
+  margin-top: -5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.95em;
+}
+
+.logout-btn {
+  background: #060010;
+  color: white;
+  border: 2px solid rgba(239, 68, 68, 0.5);
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.logout-btn:hover {
+  border-color: rgba(239, 68, 68, 0.8);
+  box-shadow: 
+    0 0 20px rgba(239, 68, 68, 0.3),
+    0 0 40px rgba(239, 68, 68, 0.15),
+    inset 0 0 60px rgba(239, 68, 68, 0.05);
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+.container {
+  display: grid;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .header h1 {
+    font-size: 1.5em;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
