@@ -13,24 +13,22 @@ const transcribeRoutes = require("./routes/transcribe");
 
 const app = express();
 
-// Middleware
-// Allow multiple frontend origins dynamically
+// CORS setup to allow local, Railway, and Vercel frontends
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:3001',
   'http://localhost:5173',
+  'https://stt-webapp.vercel.app',
+  'https://sttwebapp-production.up.railway.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
-
 app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (mobile apps, curl, etc.)
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
     } else {
-      callback(null, true); // Allow all in development
+      return callback(new Error('CORS not allowed from this origin: ' + origin));
     }
   },
   credentials: true
