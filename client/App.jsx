@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// ...existing code...
 import axios from 'axios'
 import './App.css'
 import Auth from './components/Auth'
@@ -55,32 +56,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {!isAuthenticated && (
-        <div className="darkveil-fullpage">
-          <DarkVeil
-            hueShift={0}
-            noiseIntensity={0}
-            scanlineIntensity={0}
-            speed={0.5}
-            scanlineFrequency={0}
-            warpAmount={0}
-          />
-        </div>
-      )}
-      {isAuthenticated && (
-        <DotGrid
-          dotSize={5}
-          gap={15}
-          baseColor="#271E37"
-          activeColor="#5227FF"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
+    <div className="App" style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+      {/* DarkVeil full background effect */}
+      <div className="darkveil-fullpage">
+        <DarkVeil
+          hueShift={0}
+          noiseIntensity={0}
+          scanlineIntensity={0}
+          speed={0.5}
+          scanlineFrequency={0}
+          warpAmount={0}
         />
-      )}
+      </div>
       <header className="header">
         <div className="header-left">
           <h1>
@@ -133,7 +120,6 @@ function App() {
           )}
         </div>
       </header>
-
       <main className="container">
         {!isAuthenticated ? (
           <Auth onLoginSuccess={handleLogin} />
