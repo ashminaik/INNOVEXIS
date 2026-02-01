@@ -56,7 +56,7 @@ function App() {
   }
 
   return (
-    <div className="App" style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+    <div className="App" style={{ width: '100vw', minHeight: '100vh', position: 'relative', overflowX: 'hidden', overflowY: 'auto' }}>
       {/* DarkVeil full background effect */}
       <div className="darkveil-fullpage">
         <DarkVeil
